@@ -18,6 +18,7 @@
 
 <body>
     @include('client.inc.header')
+    @include('client.inc.breadcrumb')
     @include('client.inc.services')
     <div class="container">
         <div class="content__area">
@@ -81,7 +82,7 @@
 
                             </div>
                         </form>
-                        <div class="row row-reason">
+                        <div class="row row-reason mb-3">
                             <div class="col-12 col-md-6 col-reason">
                                 <div class="reason">
                                     <i class="fa-solid fa-check"></i>
@@ -119,7 +120,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hotline">
+                        <div class="hotline mb-4">
                             <strong>Đặt hàng online: 0398827475</strong>
                             <strong>Mua hàng buôn/sỉ: 039742682</strong>
                         </div>
