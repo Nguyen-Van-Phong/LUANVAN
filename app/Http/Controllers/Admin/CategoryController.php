@@ -14,7 +14,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
 
         $categoryList = Category::all();
         return view('admin.category.index', compact('categoryList'));
@@ -37,6 +36,7 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'desc' => 'required',
+            'slug' => 'Laravel Livewire CRUD'
         ]);
 
         if ($validator->fails()) {

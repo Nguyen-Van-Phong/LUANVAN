@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Termwind\Components\Dd;
 
@@ -15,6 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $service = Service::all();
+
 
         $catehot = Category::find(1);
         $producthot = Product::where('category_id', $catehot->id)->get();
@@ -36,7 +39,7 @@ class ProductController extends Controller
         // dd($productList);
 
 
-        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc'));
+        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc', 'service'));
     }
 
     /**

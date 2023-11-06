@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProductController as ControllersProductController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ControllersProductController::class, 'index']);
+Route::get('/', [ControllersProductController::class, 'index'])->name('clienthome');
 
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin.home');
@@ -42,3 +43,8 @@ Route::get('/admin/user/destroy/{id}', [UserController::class, 'destroy'])->name
 
 Route::get('/product', [ControllersProductController::class, 'index'])->name('home');
 Route::get('/product_detail/{id}', [ControllersProductController::class, 'show'])->name('product_detail');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/search', [HomeController::class, 'index'])->name('home');

@@ -91,8 +91,9 @@
 
                                 </a>
                                 <div class="product__content-price">
-                                    <span>${{$item->price}}đ</span>
+                                    <span>{{$item->price}}đ</span>
                                 </div>
+
                             </div>
                         </div>
 
