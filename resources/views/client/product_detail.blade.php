@@ -2,6 +2,7 @@
 @section('title','Product')
 @section('content')
 <div class="container">
+
     <div class="content__area">
         <div class="row">
 
@@ -101,17 +102,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hotline mb-4">
-                        <strong>Đặt hàng online: 0398827475</strong>
-                        <strong>Mua hàng buôn/sỉ: 039742682</strong>
-                    </div>
-                </div>
 
+                </div>
+                <div class="hotline mb-4">
+                    <strong>Đặt hàng online: 0398827475</strong>
+                    <strong>Mua hàng buôn/sỉ: 039742682</strong>
+                </div>
             </div>
 
         </div>
+
     </div>
-
-
 </div>
+
+
+
 @endsection
