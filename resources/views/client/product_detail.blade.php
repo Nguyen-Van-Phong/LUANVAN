@@ -1,13 +1,14 @@
 @extends('client.layout')
 @section('title','Product')
 @section('content')
+
 <div class="container">
 
     <div class="content__area">
         <div class="row">
 
             <div class="col-md-6 col-12 product__gallery">
-                <div class="img"> <img src="{{url ( $product->img )}}" alt=""></div>
+                <div class="img"> <img src="{{asset('fe')}}/images/{{$product->img}}" alt=""></div>
             </div>
             <div class="col-md-6 col-12">
                 <div class="product__summary">
@@ -53,7 +54,15 @@
                             <li nav-item><a href="">1m5</a></li>
                             <li nav-item><a href="">1m7</a></li>
                         </ul>
+
+                    </form>
+                    <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                        @csrf
+
+                        <input class="mb-3" type="number" name="quantity" value="1" min="1">
                         <button class=" btn-custom add__to__cart" type="submit">Mua hàng</button>
+
+
                     </form>
                     <form class="Order-quickly mt-3" action="">
                         <strong>Đặt hàng nhanh</strong>
@@ -114,7 +123,7 @@
 
     </div>
 </div>
-
+@include('client.inc.footer')
 
 
 @endsection

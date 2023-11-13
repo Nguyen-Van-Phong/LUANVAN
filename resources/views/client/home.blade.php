@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('fe')}}/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script type="" src="{{asset('fe')}}/js/main.js"></script>
@@ -20,12 +20,12 @@
     @include('client.inc.services')
     <div class="container">
         <div class="row ">
-            <div class="col-6 col-sm-4 home__banner"><a href=""><img src="{{asset('fe')}}/images/gaubong1.png" alt=""></a></div>
-            <div class="col-6 col-sm-4 home__banner"><a href=""><img src="{{asset('fe')}}/images/gaubong2.png" alt=""></a></div>
-            <div class="col-6 col-sm-4 home__banner"><a href=""><img src="{{asset('fe')}}/images/gaubong3.png" alt=""></a></div>
-            <div class="col-6 col-sm-4 home__banner"><a href=""><img src="{{asset('fe')}}/images/gaubong4.png" alt=""></a></div>
-            <div class="col-6 col-sm-4 home__banner"><a href=""><img src="{{asset('fe')}}/images/gaubong5.png" alt=""></a></div>
-            <div class="col-6 col-sm-4 home__banner"><a href=""><img src="{{asset('fe')}}/images/gaubong6.png" alt=""></a></div>
+            @foreach($categoryList as $item)
+            <div class="col-6 col-sm-4 home__banner"><a href="{{route('catepr',$item->id)}}">
+                    <img src="{{asset('fe')}}/images/{{$item->img}}" alt="">
+
+                </a></div>
+            @endforeach
         </div>
         <div class="collection">
             <div class="collection__title">
@@ -86,7 +86,7 @@
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="product__content-post">
                                 <a class="" href="{{route('product_detail',['id' => $item->id])}}">
-                                    <img src="{{url ( $item->img )}}" alt="">
+                                    <img src="{{asset('fe')}}/images/{{ ( $item->img )}}" alt="">
                                     <p>{{$item->name}}</p>
 
                                 </a>
@@ -117,7 +117,7 @@
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="product__content-post">
                                 <a class="" href="{{route('product_detail',['id' => $item->id])}}">
-                                    <img src="{{url ( $item->img )}}" alt="">
+                                    <img src="{{asset('fe')}}/images/{{ ( $item->img )}}" alt="">
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
@@ -145,7 +145,7 @@
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="product__content-post">
                                 <a class="" href="{{route('product_detail',['id' => $item->id])}}">
-                                    <img src="{{url ( $item->img )}}" alt="">
+                                    <img src="{{asset('fe')}}/images/{{ ( $item->img )}}" alt="">
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
@@ -173,7 +173,7 @@
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="product__content-post">
                                 <a class="" href="{{route('product_detail',['id' => $item->id])}}">
-                                    <img src="{{url ( $item->img )}}" alt="">
+                                    <img src="{{asset('fe')}}/images/{{ ( $item->img )}}" alt="">
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
@@ -201,7 +201,7 @@
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="product__content-post">
                                 <a class="" href="{{route('product_detail',['id' => $item->id])}}">
-                                    <img src="{{url ( $item->img )}}" alt="">
+                                    <img src="{{asset('fe')}}/images/{{ ( $item->img )}}" alt="">
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">

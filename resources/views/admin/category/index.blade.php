@@ -17,12 +17,12 @@
 </div>
 @endif
 <!-- DataTales Example -->
-<div class="card shadow mb-4">
+<div class="card shadow mb-4 ">
     <div class="card-header py-3">
         <a href="{{ route('admin.category.create')}}" class="m-0 font-weight-bold  btn btn-primary ">Add +</a>
     </div>
     <div class="card-body">
-        <div class="table-responsive">
+        <div class="table-responsive ">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>

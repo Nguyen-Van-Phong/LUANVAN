@@ -14,10 +14,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 
     /**
      * Show the application dashboard.
@@ -27,8 +24,8 @@ class HomeController extends Controller
     public function index()
     {
         //
-        
 
+        $categoryList = Category::all();
         $catehot = Category::find(1);
         $producthot = Product::where('category_id', $catehot->id)->get();
 
@@ -49,6 +46,6 @@ class HomeController extends Controller
         // dd($productList);
 
 
-        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc'));
+        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc', 'categoryList'));
     }
 }

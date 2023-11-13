@@ -3,6 +3,6 @@
 
 @section('content')
 
-<h1>home Dashboard</h1>
+<h1>Hi!! Welcome Home Dashboard</h1>
 
 @endsection

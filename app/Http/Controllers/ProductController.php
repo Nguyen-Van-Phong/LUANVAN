@@ -16,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $service = Service::all();
+
+        $categoryList = Category::all();
 
 
         $catehot = Category::find(1);
@@ -39,9 +40,15 @@ class ProductController extends Controller
         // dd($productList);
 
 
-        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc', 'service'));
+        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc', 'categoryList'));
     }
+    public function cate_product($id)
+    {
+        $nameCate = Category::find($id);
+        $catepr = Product::where('category_id', $id)->get();
 
+        return view('client.category', compact('catepr', 'nameCate'));
+    }
     /**
      * Show the form for creating a new resource.
      */

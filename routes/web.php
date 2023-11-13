@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CartController as ControllersCartController;
 use App\Http\Controllers\ProductController as ControllersProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,10 +43,18 @@ Route::get('/admin/user/create', [UserController::class, 'create'])->name('admin
 Route::post('/admin/user/create', [UserController::class, 'store'])->name('admin.user.create');
 Route::get('/admin/user/destroy/{id}', [UserController::class, 'destroy'])->name('admin.user.delete');
 
-Route::get('/product', [ControllersProductController::class, 'index'])->name('home');
+Route::get('/admin/order', [OrderController::class, 'index'])->name('admin.order');
+
 Route::get('/product_detail/{id}', [ControllersProductController::class, 'show'])->name('product_detail');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/search', [HomeController::class, 'index'])->name('home');
+Route::get('/search', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/category/{id}', [ControllersProductController::class, 'cate_product'])->name('catepr');
+
+Route::post('/cart/add/{id}', [ControllersCartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [ControllersCartController::class, 'showCart'])->name('homecart');
+Route::delete('/cart/{id}', [ControllersCartController::class, 'destroy'])->name('cart.destroy');
