@@ -15,14 +15,13 @@
     @else
     <div class="container">
         <div class="row">
-            <div class="col-9">
+            <div class="col-12 col-md-12 col-lg-9">
                 <table class="table table-striped table-hover">
                     <thead>
-                        <tr class="table__title">
+                        <tr>
                             <th colspan="2">Product</th>
-                            <th>Price</th>
+                            <th class="product__price">Price</th>
                             <th>Quantity</th>
-
                             <th>Total</th>
                             <th>Delete</th>
                         </tr>
@@ -32,9 +31,9 @@
                         <tr>
 
                             <td> {{ $cart->product->name }}</td>
-                            <td> <img src="{{asset('fe')}}/images/{{ $cart->product->img }}" width="100px" alt=""></td>
+                            <td> <img src="{{asset('fe')}}/images/{{ $cart->product->img }}" width="56px" alt=""></td>
 
-                            <td>${{ $cart->product->price }}</td>
+                            <td class="product__price">${{ $cart->product->price }}</td>
                             <td>{{ $cart->quantity }}</td>
                             <td>${{ $cart->product->price * $cart->quantity }}</td>
                             <td>
@@ -54,8 +53,8 @@
                 </table>
             </div>
 
-            <div class="col-3">
-                <div class="total">
+            <div class="col-12 col-md-12 col-lg-3 m-auto">
+                <div class="total mb-2">
 
                     <div class="container">
                         <div class="total__content">
@@ -78,7 +77,7 @@
                             </div>
                             <div class="total__apply">
                                 <input type="text" placeholder="Coupon">
-                                <button>Apply</button>
+                                <button type="submit">Apply</button>
                             </div>
                             <div class="Checkout">
                                 <button> Process to checkout </button>

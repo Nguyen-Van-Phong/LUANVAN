@@ -27,6 +27,7 @@
                         <!-- <th>Img</th> -->
                         <!-- <th>Desc</th> -->
                         <th>quantity</th>
+                        <th>product_id</th>
                         <!-- <th>Category</th>
                         <th>Action</th> -->
 
@@ -43,6 +44,7 @@
                         <td>{{ $item->user_id}}</td>
 
                         <td>{{ $item->quantity}}</td>
+                        <td>{{ $item->product_id}}</td>
 
 
                     </tr>

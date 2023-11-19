@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gaubongonline</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('fe')}}/css/style.css">
@@ -74,6 +74,7 @@
             <div class="content__more">
                 <a class="btn btn-primary" href="">
                     Xem thêm
+
                 </a>
             </div>
             <div class="products">
@@ -216,6 +217,36 @@
                 <div class="content__more">
                     <a class="btn btn-primary" href="">
                         Xem tất cả các GẤU BÔNG BIGSIZE
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="products">
+                <div class="product__title">
+                    <h2>{{$catephukien->name}}</h2>
+                </div>
+                <div class="product__content mt-4">
+                    <div class=" row ">
+                        @foreach ($productphukien as $item)
+                        <div class="col-lg-3 col-md-6 col-6">
+                            <div class="product__content-post">
+                                <a class="" href="{{route('product_detail',['id' => $item->id])}}">
+                                    <img src="{{asset('fe')}}/images/{{ ( $item->img )}}" alt="">
+                                    <p>{{$item->name}}</p>
+                                </a>
+                                <div class="product__content-price">
+                                    <span>{{$item->price}}đ</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="content__more">
+                    <a class="btn btn-primary" href="">
+                        Xem tất cả các PHỤ KIỆN
                     </a>
                 </div>
             </div>

@@ -35,12 +35,13 @@ class ProductController extends Controller
         $categautruc = Category::find(5);
         $productgautruc = Product::where('category_id', $categautruc->id)->get();
 
-
+        $catephukien = Category::find(6);
+        $productphukien = Product::where('category_id', $catephukien->id)->get();
 
         // dd($productList);
 
 
-        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc', 'categoryList'));
+        return view('client.home', compact('catehot', 'producthot', 'cateteddy', 'productteddy', 'catebst', 'productbst', 'catebstnhimbong', 'productbstnhimbong', 'categautruc', 'productgautruc', 'categoryList', 'catephukien', 'productphukien'));
     }
     public function cate_product($id)
     {

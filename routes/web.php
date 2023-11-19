@@ -58,3 +58,5 @@ Route::get('/category/{id}', [ControllersProductController::class, 'cate_product
 Route::post('/cart/add/{id}', [ControllersCartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [ControllersCartController::class, 'showCart'])->name('homecart');
 Route::delete('/cart/{id}', [ControllersCartController::class, 'destroy'])->name('cart.destroy');
+
+Route::get('/search', [\App\Http\Controllers\HomeController::class, 'search'])->name('search');

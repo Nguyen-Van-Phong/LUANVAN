@@ -1,29 +1,37 @@
 @extends('client.layout')
 @section('title','Search')
 @section('content')
-<div class="products">
-    <div class="product__title">
-        <h2>{{$category->name}}</h2>
-    </div>
-    <div class="product__content mt-4">
-        <div class=" row ">
-            @foreach ($product as $item)
-            <div class="col-lg-3 col-md-6 col-6">
-                <div class="product__content-post">
-                    <a class="" href="{{route('product_detail',['id' => $item->id])}}">
-                        <img src="{{url ( $item->img )}}" alt="">
-                        <p>{{$item->name}}</p>
+@if ($productList->count() > 0)
+<div class="container">
+    <div class="products">
+        <div class="product__title">
+            <h2>Từ khóa tìm kiếm"{{$query}}"</h2>
+        </div>
+        <div class="product__content mt-4">
+            <div class=" row ">
+                @foreach ($productList as $item)
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="product__content-post">
+                        <a class="" href="{{route('product_detail',['id' => $item->id])}}">
+                            <img src="{{asset('fe')}}/images/{{( $item->img )}}" alt="">
+                            <p>{{$item->name}}</p>
 
-                    </a>
-                    <div class="product__content-price">
-                        <span>{{$item->price}}đ</span>
+                        </a>
+                        <div class="product__content-price">
+                            <span>{{$item->price}}đ</span>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
 
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
+@else
+<div class="product__title">
+    <h2>Không có sản phẩm này</h2>
+</div>
+@endif
 @endsection

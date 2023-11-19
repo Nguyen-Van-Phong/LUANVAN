@@ -11,9 +11,9 @@
                 <a href="{{route('clienthome')}}"> <span>GẤU BÔNG ONLINE</span></a>
             </div>
 
-            <form action="">
+            <form action="{{route('search')}}" method="get">
                 <div class="header__top-formSearch">
-                    <input type="search" placeholder="Nhập sản phẩm cần tìm" class="">
+                    <input type="text" name="query" placeholder="Nhập sản phẩm cần tìm" class="">
                     <button type="sunmit" class="btn btn-custom-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
