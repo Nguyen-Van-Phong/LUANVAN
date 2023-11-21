@@ -690,6 +690,10 @@ a {
 }
 
 
+.text__checkout,
+.text__infor {
+    font-family: 'Times New Roman', Times, serif;
+}
 
 .Checkout button {
     margin-top: 18px;
@@ -749,4 +753,32 @@ a {
 
 .coupon button:focus {
     outline: none;
+}
+
+/*ProductDetail*/
+#buy-amount {
+    display: flex;
+}
+
+.minus-btn,
+.plus-btn {
+    width: 35px;
+    height: 35px;
+    outline: none;
+    background: none;
+    border: 1px solid #ececec;
+}
+
+.minus-btn i,
+.plus-btn i {
+
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+
+#buy-amount #amount {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ececec;
 }

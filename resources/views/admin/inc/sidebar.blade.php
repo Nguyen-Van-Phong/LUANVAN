@@ -39,6 +39,11 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Order</span></a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('admin.orderItem')}}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>OrderItem</span></a>
+    </li>
 
 
     <!-- Divider -->

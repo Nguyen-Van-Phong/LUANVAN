@@ -1,12 +1,25 @@
+let amountElement = document.getElementById('amount');
 
 
-
-var imgs = ["/images/slider1.jpg", "/images/slider2.jpg", "/images/slider1.jpg"];
-for (let index = 0; index < imgs.length; index++) {
-
-    document.getElementById('img').src = imgs[index];
+// console.log(amount);
+let render = (amount) => {
+    amountElement.value = amount
+}
+//Handle Plus
+let handlePlus = () => {
+    // console.log(amount);
+    amount++;
+    render(amount);
 }
 
+//Handle Minus
+let handleMinus = () => {
+    if (amount > 1) {
+        amount--
 
-
-
+    }
+    else {
+        amount = 1;
+    }
+    render(amount);
+}

@@ -33,9 +33,9 @@
                             <td> {{ $cart->product->name }}</td>
                             <td> <img src="{{asset('fe')}}/images/{{ $cart->product->img }}" width="56px" alt=""></td>
 
-                            <td class="product__price">${{ $cart->product->price }}</td>
+                            <td class="product__price">${{number_format( $cart->product->price )}}</td>
                             <td>{{ $cart->quantity }}</td>
-                            <td>${{ $cart->product->price * $cart->quantity }}</td>
+                            <td>${{number_format( $cart->product->price * $cart->quantity )}}</td>
                             <td>
                                 <form action="{{route('cart.destroy', $cart->id)}}" method="POST">
                                     @csrf
@@ -58,29 +58,40 @@
 
                     <div class="container">
                         <div class="total__content">
-                            <h3>ORDER SUMMARY</h3>
+                            <h3 class=" text__checkout text-center">THANH TOÁN </h3>
                             <div class="total__subtotal d-flex">
-                                <p>Subtotal</p>
+                                <p>PHỤ THU</p>
                                 <p style="color:palevioletred">0$</p>
                             </div>
                             <div class="Delivery">
-                                <p>Delivery</p>
-                                <p>free</p>
+                                <p>VẬN CHUYỂN</p>
+                                <p>MIỄN PHÍ</p>
                             </div>
                             <div class="tax">
-                                <p>Tax</p>
-                                <p>Free</p>
+                                <p>THUẾ</p>
+                                <p>MIỄN PHÍ</p>
                             </div>
                             <div class="total__total">
                                 <p>TOTAL</p>
-                                <p>${{ $total }}</p>
+                                <p>${{number_format( $total )}}</p>
                             </div>
-                            <div class="total__apply">
-                                <input type="text" placeholder="Coupon">
-                                <button type="submit">Apply</button>
+
+                            <div class="Checkout">
+                                <form action="/check-out" method="post">
+                                    @csrf
+                                    <h5 class="text__infor text-center mb-3"> VUI LÒNG NHẬP THÔNG TIN</h5>
+                                    <label for="">NHẬP HỌ TÊN</label>
+                                    <input type="text" class="form-control" name="name" value="{{$user->name}}" required>
+                                    <label for="">ĐỊA CHỈ</label>
+                                    <input type="text" class="form-control" name="address" value="{{$user->address}}" required>
+                                    <label for="">SĐT</label>
+                                    <input type="text" class="form-control" name="phone" value="{{$user->phone}}" required>
+                                    <input type="hidden" name="total" value="{{$total}}">
+                                    <button name=""> THANH TOÁN NGAY! </button>
+                                </form>
                             </div>
                             <div class="Checkout">
-                                <button> Process to checkout </button>
+                                <button type="submit" name="checkout"> CHUYỂN KHOẢN! </button>
                             </div>
                         </div>
                     </div>

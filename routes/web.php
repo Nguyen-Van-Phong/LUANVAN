@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\OrderItemController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController as ControllersCartController;
@@ -44,6 +45,10 @@ Route::post('/admin/user/create', [UserController::class, 'store'])->name('admin
 Route::get('/admin/user/destroy/{id}', [UserController::class, 'destroy'])->name('admin.user.delete');
 
 Route::get('/admin/order', [OrderController::class, 'index'])->name('admin.order');
+Route::get('/admin/orderItem', [OrderItemController::class, 'index'])->name('admin.orderItem');
+
+
+
 
 Route::get('/product_detail/{id}', [ControllersProductController::class, 'show'])->name('product_detail');
 
@@ -60,3 +65,4 @@ Route::get('/cart', [ControllersCartController::class, 'showCart'])->name('homec
 Route::delete('/cart/{id}', [ControllersCartController::class, 'destroy'])->name('cart.destroy');
 
 Route::get('/search', [\App\Http\Controllers\HomeController::class, 'search'])->name('search');
+Route::post('/check-out', [ControllersCartController::class, 'checkout'])->name('checkout');

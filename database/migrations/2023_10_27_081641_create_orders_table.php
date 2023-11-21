@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->integer('quantity')->default(1);
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('code');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('payment_method');
+            $table->string('status');
             $table->timestamps();
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

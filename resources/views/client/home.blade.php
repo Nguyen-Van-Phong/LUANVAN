@@ -92,7 +92,7 @@
 
                                 </a>
                                 <div class="product__content-price">
-                                    <span>{{$item->price}}đ</span>
+                                    <span>{{number_format($item->price)}}đ</span>
                                 </div>
 
                             </div>
@@ -122,7 +122,7 @@
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
-                                    <span>{{$item->price}}đ</span>
+                                    <span>{{number_format($item->price)}}đ</span>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
-                                    <span>{{$item->price}}đ</span>
+                                    <span>{{number_format($item->price)}}đ</span>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +178,7 @@
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
-                                    <span>{{$item->price}}đ</span>
+                                    <span>{{number_format($item->price)}}đ</span>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
-                                    <span>{{$item->price}}đ</span>
+                                    <span>{{number_format($item->price)}}đ</span>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@
                                     <p>{{$item->name}}</p>
                                 </a>
                                 <div class="product__content-price">
-                                    <span>{{$item->price}}đ</span>
+                                    <span>{{number_format($item->price)}}đ</span>
                                 </div>
                             </div>
                         </div>

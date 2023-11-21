@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_id'); // Thêm cột product_id
+            $table->integer('quantity')->default(1);
             $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('product_id')->references('id')->on('products'); // Thêm khóa ngoại đến bảng productso
+            // $table->double('price')->default(0);
             $table->timestamps();
         });
     }

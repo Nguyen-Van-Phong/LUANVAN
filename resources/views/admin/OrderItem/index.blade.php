@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title','Order')
+@section('title','OrderItem')
 
 @section('content')
 @if(Session::has('message'))
@@ -23,13 +23,12 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>user</th>
+                        <th>Order</th>
                         <!-- <th>Img</th> -->
                         <!-- <th>Desc</th> -->
-                        <th>Code</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Status</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+
 
 
                     </tr>
@@ -39,14 +38,13 @@
                 </tfoot>
                 <tbody>
 
-                    @foreach($orderList as $item)
+                    @foreach($orderItemList as $item)
 
                     <tr>
-                        <td>{{ $item->user->name}}</td>
-                        <td>{{ $item->code}}</td>
-                        <td>{{ $item->address}}</td>
-                        <td>{{ $item->phone}}</td>
-                        <td>{{ $item->status}}</td>
+                        <td>{{ $item->order_id}}</td>
+                        <td>{{ $item->product_id}}</td>
+                        <td>{{ $item->quantity}}</td>
+
 
 
 

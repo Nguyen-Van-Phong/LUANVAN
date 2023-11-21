@@ -46,7 +46,7 @@
                     </table>
                     <form action="">
                         <div class="tab-content">
-                            <span class="price">{{$product->price}}đ</span>
+                            <span class="price">{{number_format($product->price)}}đ</span>
                         </div>
                         <ul class="nav">
                             <li nav-item><a class="active" href="">1m</a></li>
@@ -56,23 +56,18 @@
                         </ul>
 
                     </form>
+
                     <form action="{{ route('cart.add', $product->id) }}" method="POST">
                         @csrf
-
-                        <input class="mb-3" type="number" name="quantity" value="1" min="1">
-                        <button class=" btn-custom add__to__cart" type="submit">Mua hàng</button>
-
-
-                    </form>
-                    <form class="Order-quickly mt-3" action="">
-                        <strong>Đặt hàng nhanh</strong>
-                        <div class="input-group">
-                            <input type="text" placeholder="Nhập số điện thoại">
-
-                            <button class="btn-btn-primary" type="submit">Gửi</button>
-
+                        <div id="buy-amount">
+                            <div class="minus-btn" onclick="handleMinus()"><i class="fa-solid fa-minus"></i></div>
+                            <input type="number" name="quantity" id="amount" value="1">
+                            <div class="plus-btn" onclick="handlePlus()"><i class="fa-solid fa-plus"></i></div>
                         </div>
+                        <button class=" btn-custom add__to__cart mt-3" type="submit">Mua hàng</button>
                     </form>
+
+
                     <div class="row row-reason mb-3">
                         <div class="col-12 col-md-6 col-reason">
                             <div class="reason">
@@ -123,6 +118,7 @@
 
     </div>
 </div>
+
 @include('client.inc.footer')
 
 
